@@ -5,7 +5,7 @@
 #include "lib_ordena.h"
 
 #define MAX_IT 5 
-#define TAM_VETOR 100
+#define TAM_VETOR 30
 
 double timestamp(void)
 {
@@ -30,7 +30,7 @@ int main () {
 		imprime_vetor (v, tam);
 
         ini = timestamp();
-        quicksort_inicio (v,0,tam-1); 
+        quicksort_fim (v,0,tam-1); 
         fim = timestamp();
 
         soma_tempo += (fim-ini);
@@ -39,7 +39,7 @@ int main () {
         embaralha_vetor (v,tam);
 	}
 
-    printf("Tempo medio do quicksort: %f segundos.\n", soma_tempo/MAX_IT);
+    printf("\nTempo medio do quicksort: %f segundos.\n", soma_tempo/MAX_IT);
 
     return 0;
 }

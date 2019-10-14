@@ -46,14 +46,13 @@ void embaralha_vetor (int v[], int tam) {
     }
 }
 
-void intercala (int v[], int ini, int meio, int fim) {
-    printf("implementar intercala\n");
+void inserctionsort (int v[], int ini, int fim) {
+    printf("implementar insertionsort\n");
 }
 
+/* particiona com pivo no inicio */
 int particiona_inicio (int v[], int ini, int fim)
 {
-	/* particiona com pivo no inicio */
-
 	int pivo, i, j;
 
 	pivo = v[ini];
@@ -61,7 +60,6 @@ int particiona_inicio (int v[], int ini, int fim)
 
 	for ( j=i; j <= fim; j++ )
 	{
-        /* menores a esquerda e maiores ou iguais a direita */
 		if ( v[j] < pivo ) 
 		{
 			troca (v, i, j);
@@ -74,10 +72,6 @@ int particiona_inicio (int v[], int ini, int fim)
 	return i-1;
 }
 
-void inserctionsort (int v[], int ini, int fim) {
-    printf("implementar insertionsort\n");
-}
-
 void quicksort_inicio (int v[], int ini, int fim)
 {
 	int pivo;		
@@ -88,6 +82,44 @@ void quicksort_inicio (int v[], int ini, int fim)
 		quicksort_inicio (v, ini, pivo-1);
 		quicksort_inicio (v, pivo+1, fim);
 	}
+}
+
+/* particiona com pivo no fim */
+int particiona_fim (int v[], int ini, int fim)
+{
+	int pivo, i, j;
+
+	pivo = v[fim];
+	i = ini;
+
+	for ( j=i; j < fim; j++ )
+	{
+		if ( v[j] < pivo ) 
+		{
+			troca (v, i, j);
+			i++;
+		}
+	}
+
+	troca (v, fim, i);
+
+	return i;
+}
+
+void quicksort_fim (int v[], int ini, int fim)
+{
+	int pivo;		
+
+	if (ini < fim)
+	{
+		pivo = particiona_fim (v, ini, fim);
+		quicksort_fim (v, ini, pivo-1);
+		quicksort_fim (v, pivo+1, fim);
+	}
+}
+
+void intercala (int v[], int ini, int meio, int fim) {
+    printf("implementar intercala\n");
 }
 
 void mergesort (int v[], int ini, int fim) {
