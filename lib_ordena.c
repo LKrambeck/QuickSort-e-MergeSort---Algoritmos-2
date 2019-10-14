@@ -74,13 +74,13 @@ int particiona_inicio (int v[], int ini, int fim)
 
 void quicksort_inicio (int v[], int ini, int fim)
 {
-	int pivo;		
+	int pivo_i;		
 
 	if (ini < fim)
 	{
-		pivo = particiona_inicio (v, ini, fim);
-		quicksort_inicio (v, ini, pivo-1);
-		quicksort_inicio (v, pivo+1, fim);
+		pivo_i = particiona_inicio (v, ini, fim);
+		quicksort_inicio (v, ini, pivo_i-1);
+		quicksort_inicio (v, pivo_i+1, fim);
 	}
 }
 
@@ -108,16 +108,53 @@ int particiona_fim (int v[], int ini, int fim)
 
 void quicksort_fim (int v[], int ini, int fim)
 {
-	int pivo;		
+	int pivo_i;		
 
 	if (ini < fim)
 	{
-		pivo = particiona_fim (v, ini, fim);
-		quicksort_fim (v, ini, pivo-1);
-		quicksort_fim (v, pivo+1, fim);
+		pivo_i = particiona_fim (v, ini, fim);
+		quicksort_fim (v, ini, pivo_i-1);
+		quicksort_fim (v, pivo_i+1, fim);
 	}
 }
 
+/* particiona com pivo no meio */
+int particiona_meio (int v[], int ini, int fim)
+{
+	int pivo, i, j;
+
+	pivo = v[ini + (fim-ini)/2]; /* evita overflow */
+	i = ini-1;
+	j = fim+1;
+
+	while (1)
+	{
+		do 
+			i++;
+		while ( v[i] < pivo );
+
+		do 
+			j--;
+		while ( v[j] > pivo );
+
+		if ( i >= j )
+			return j;
+
+		troca (v, i, j);	
+	}
+}
+
+void quicksort_meio (int v[], int ini, int fim)
+{
+	int pivo_i;		
+
+	if (ini < fim)
+	{
+		pivo_i = particiona_meio (v, ini, fim);
+		quicksort_meio (v, ini, pivo_i);
+		quicksort_meio (v, pivo_i+1, fim);
+	}
+}
 void intercala (int v[], int ini, int meio, int fim) {
     printf("implementar intercala\n");
 }

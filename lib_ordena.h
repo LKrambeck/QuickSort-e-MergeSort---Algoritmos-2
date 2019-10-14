@@ -10,5 +10,7 @@ int  particiona_inicio        (int v[], int ini, int fim);
 void quicksort_inicio         (int v[], int ini, int fim);
 int  particiona_fim           (int v[], int ini, int fim);
 void quicksort_fim            (int v[], int ini, int fim);
+int  particiona_meio          (int v[], int ini, int fim);
+void quicksort_meio           (int v[], int ini, int fim);
 void intercala                (int v[], int ini, int meio, int fim);
 void mergesort                (int v[], int ini, int fim);

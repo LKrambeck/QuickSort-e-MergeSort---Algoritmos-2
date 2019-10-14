@@ -5,7 +5,7 @@
 #include "lib_ordena.h"
 
 #define MAX_IT 5 
-#define TAM_VETOR 30
+#define TAM_VETOR 8
 
 double timestamp(void)
 {
@@ -30,7 +30,7 @@ int main () {
 		imprime_vetor (v, tam);
 
         ini = timestamp();
-        quicksort_fim (v,0,tam-1); 
+        quicksort_meio (v,0,tam-1); 
         fim = timestamp();
 
         soma_tempo += (fim-ini);
