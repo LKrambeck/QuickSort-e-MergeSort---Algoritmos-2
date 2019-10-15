@@ -30,7 +30,7 @@ int main () {
 		imprime_vetor (v, tam);
 
         ini = timestamp();
-        mergesort_basico (v,0,tam-1); 
+        mergesort_melhorado (v,0,tam-1); 
         fim = timestamp();
 
         soma_tempo += (fim-ini);

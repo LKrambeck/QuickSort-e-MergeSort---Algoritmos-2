@@ -12,6 +12,7 @@ void imprime_vetor (int v[], int tam) {
     printf("%d\n",v[tam-1]);
 }
 
+/* função interna da biblioteca */
 void troca (int v[], int i, int j) {
     int aux;
 
@@ -123,7 +124,8 @@ int particiona_meio (int v[], int ini, int fim)
 {
 	int pivo, i, j;
 
-	pivo = v[ini + (fim-ini)/2]; /* evita overflow */
+	/* evita overflow */
+	pivo = v[ini + (fim-ini)/2];
 	i = ini-1;
 	j = fim+1;
 
@@ -156,6 +158,7 @@ void quicksort_meio (int v[], int ini, int fim)
 	}
 }
 
+/* função interna da biblioteca */
 void copia_vetor (int v[], int aux[], int ini, int fim)
 {
 	int i, tam = fim-ini+1;
@@ -228,3 +231,98 @@ void mergesort_basico (int v[], int ini, int fim)
 	}
 }
 
+/* intercala com melhorias */
+void intercala_melhorado (int v[], int ini, int meio, int fim) 
+{
+	/* implementar passar o vetor por parametro */
+	int tam_esq = meio - ini + 1;
+	int tam_dir = fim - meio;
+	int esquerdo[tam_esq], direito[tam_dir];
+
+	copia_vetor (v, esquerdo, ini, meio);
+	copia_vetor (v, direito, meio+1, fim);
+
+	int i = 0;
+	int j = 0;
+
+	/* intercala entre os dois vetores auxiliares */
+	while ( (i < tam_esq) && (j < tam_dir) )
+	{
+		if ( esquerdo[i] < direito[j] )
+		{
+			v[ini] = esquerdo[i];
+			i++;
+		}
+
+		else
+		{
+			v[ini] = direito[j];
+			j++;
+		}
+	
+		ini++;
+	}		
+
+	/* copia o restante do vetor que ainda houver elementos */
+	while (i < tam_esq)
+	{
+		v[ini] = esquerdo[i];
+		i++;
+		ini++;
+	}
+
+	while (j < tam_dir)
+	{
+		v[ini] = direito[j];
+		j++;
+		ini++;
+	}
+}
+
+/* função interna da biblioteca */
+/* testa se duas particoes do merge já estao ordenadas */
+int esta_ordenado (int v[], int meio)
+{
+	if ( v[meio] < v[meio+1] )
+		return 1;
+
+	return 0;
+}
+
+/* função interna da biblioteca */
+/* testa se duas particoes do merge estão ordenadas invertidas */
+int esta_invertido (int v[], int ini, int fim)
+{
+	/*if ( v[ini] > v[fim] )
+		return 1; falta inverter */
+
+	return 0;
+}
+
+/* mergesort com melhorias */
+void mergesort_melhorado (int v[], int ini, int fim) 
+{
+	/* evita overflow */
+	int meio = ini + (fim - ini)/2;
+
+	if (ini < fim)
+	{
+		if (esta_ordenado(v, meio))
+			printf ("ta ordenado lek\n");
+
+		else if (esta_invertido(v, ini, fim))
+			printf ("ta ordenado invertido lek\n");
+			/* falta inverter */
+
+		else 
+		{
+			int aux[fim-ini+1];
+
+			copia_vetor (v, aux, ini, fim);
+			
+			mergesort_basico (v, ini, meio);
+			mergesort_basico (aux, meio+1, fim);
+			intercala_basico (v, ini, meio, fim);
+		}
+	}
+}
