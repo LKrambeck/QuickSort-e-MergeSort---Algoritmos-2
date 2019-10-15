@@ -12,5 +12,6 @@ int  particiona_fim           (int v[], int ini, int fim);
 void quicksort_fim            (int v[], int ini, int fim);
 int  particiona_meio          (int v[], int ini, int fim);
 void quicksort_meio           (int v[], int ini, int fim);
+void copia_vetor              (int v[], int aux[], int ini, int fim);
 void intercala                (int v[], int ini, int meio, int fim);
-void mergesort                (int v[], int ini, int fim);
+void mergesort_basico         (int v[], int ini, int fim);

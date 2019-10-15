@@ -155,11 +155,76 @@ void quicksort_meio (int v[], int ini, int fim)
 		quicksort_meio (v, pivo_i+1, fim);
 	}
 }
-void intercala (int v[], int ini, int meio, int fim) {
-    printf("implementar intercala\n");
+
+void copia_vetor (int v[], int aux[], int ini, int fim)
+{
+	int i, tam = fim-ini+1;
+
+	for ( i=0; i < tam; i++ )
+	{
+		aux[i] = v[ini];
+		ini++;
+	}
 }
 
-void mergesort (int v[], int ini, int fim) {
-    printf("implementar mergesort\n");
+/* intercala sem melhorias */
+void intercala_basico (int v[], int ini, int meio, int fim) 
+{
+	int tam_esq = meio - ini + 1;
+	int tam_dir = fim - meio;
+	int esquerdo[tam_esq], direito[tam_dir];
+
+	copia_vetor (v, esquerdo, ini, meio);
+	copia_vetor (v, direito, meio+1, fim);
+
+	int i = 0;
+	int j = 0;
+
+	/* intercala entre os dois vetores auxiliares */
+	while ( (i < tam_esq) && (j < tam_dir) )
+	{
+		if ( esquerdo[i] < direito[j] )
+		{
+			v[ini] = esquerdo[i];
+			i++;
+		}
+
+		else
+		{
+			v[ini] = direito[j];
+			j++;
+		}
+	
+		ini++;
+	}		
+
+	/* copia o restante do vetor que ainda houver elementos */
+	while (i < tam_esq)
+	{
+		v[ini] = esquerdo[i];
+		i++;
+		ini++;
+	}
+
+	while (j < tam_dir)
+	{
+		v[ini] = direito[j];
+		j++;
+		ini++;
+	}
+}
+
+/* mergesort sem melhorias */
+void mergesort_basico (int v[], int ini, int fim) 
+{
+	/* evita overflow */
+	int meio = ini + (fim - ini)/2;
+
+	if ( ini < fim )
+	{
+		mergesort_basico (v, ini, meio);
+		mergesort_basico (v, meio+1, fim);
+		intercala_basico (v, ini, meio, fim);
+	}
 }
 
