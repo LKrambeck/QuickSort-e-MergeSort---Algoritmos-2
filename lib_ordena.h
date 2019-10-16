@@ -9,5 +9,6 @@ void quicksort_inicio         (int v[], int ini, int fim);
 void quicksort_fim            (int v[], int ini, int fim);
 void quicksort_meio           (int v[], int ini, int fim);
 void quicksort_mediana3       (int v[], int ini, int fim);
+void quicksort_mediana5       (int v[], int ini, int fim);
 void mergesort_basico         (int v[], int ini, int fim);
 void mergesort_melhorado      (int v[], int ini, int fim);

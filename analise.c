@@ -17,8 +17,8 @@ int main () {
 
 	/* Mude aqui o numero de iterações, tamanho maximo e nome do algoritmo */
 	int MAX_IT = 100;
-	int TAM_MAX = 1000000;
-	char *algoritmo = "quicksort_mediana3 (R)";
+	int TAM_MAX = 100000;
+	char *algoritmo = "insertionsort (R)";
 
 	for ( tam=10; tam <= TAM_MAX; tam*=10 ) 
 	{
@@ -36,7 +36,7 @@ int main () {
 
 			ini = timestamp();
 			/* Mude aqui o algoritmo usado */
-			quicksort_mediana3 (v,0,tam-1); 
+			insertionsort (v,0,tam-1); 
 			fim = timestamp();
 
 			soma_tempo += (fim-ini);

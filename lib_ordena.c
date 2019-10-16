@@ -244,6 +244,56 @@ void quicksort_mediana3 (int v[], int ini, int fim)
 	}
 }
 
+/* particiona com pivo da mediana de 3 */
+int particiona_mediana5 (int v[], int ini, int fim, int pivo)
+{
+	int i, j;
+
+	i = ini-1;
+	j = fim+1;
+
+	while (1)
+	{
+		do 
+			i++;
+		while ( v[i] < pivo );
+
+		do 
+			j--;
+		while ( v[j] > pivo );
+
+		if ( i >= j )
+			return j;
+
+		troca (v, i, j);	
+	}
+}
+
+/* calcula a mediana de 3 entre v[ini], v[meio] e v[fim] usando vetor e insertion */
+int mediana5_vetor (int v[], int ini, int fim)
+{
+	int meio = ini + (fim-ini)/2;
+	int esq = ini + (meio-ini)/2;
+	int dir = meio + (fim-meio)/2;
+
+	int m[5] = {v[ini], v[esq], v[meio], v[dir], v[fim]};
+
+	insertionsort (m, 0, 4);
+
+	return m[2];	
+}
+
+void quicksort_mediana5 (int v[], int ini, int fim)
+{
+	if (ini < fim)
+	{
+		int pivo = mediana5_vetor (v, ini, fim);
+		int pivo_i = particiona_mediana5 (v, ini, fim, pivo);
+		quicksort_mediana5 (v, ini, pivo_i);
+		quicksort_mediana5 (v, pivo_i+1, fim);
+	}
+}
+
 void copia_vetor (int v[], int aux[], int ini, int fim)
 {
 	int i, tam = fim-ini+1;
