@@ -14,3 +14,4 @@ Implementação do Merge Sort:
 - Com teste se esta ordenado;
 - Passando vetor auxiliar por parâmetro;
 - Intercalando vetor e aux nas chamadas recursivas;
+- Híbrido com Insertion Sort.
