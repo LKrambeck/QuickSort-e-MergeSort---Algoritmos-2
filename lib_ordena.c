@@ -47,8 +47,24 @@ void embaralha_vetor (int v[], int tam) {
     }
 }
 
-void inserctionsort (int v[], int ini, int fim) {
-    printf("implementar insertionsort\n");
+void insertionsort (int v[], int ini, int fim) 
+{
+	int i, j, chave;
+	int tam = fim - ini + 1;
+	
+	for ( i=1; i<tam; i++ )
+	{		
+		chave = v[i];
+		j = i-1;
+
+		while ( j >= 0 && chave < v[j] )
+		{
+			v[j+1] = v[j];
+			j--;
+		}
+
+		v[j+1] = chave;
+	}
 }
 
 /* particiona com pivo no inicio */
@@ -293,8 +309,8 @@ int esta_ordenado (int v[], int meio)
 /* testa se duas particoes do merge estão ordenadas invertidas */
 int esta_invertido (int v[], int ini, int fim)
 {
-	/*if ( v[ini] > v[fim] )
-		return 1; falta inverter */
+	if ( v[ini] > v[fim] )
+		return 1;
 
 	return 0;
 }
@@ -310,9 +326,9 @@ void mergesort_melhorado (int v[], int ini, int fim)
 		if (esta_ordenado(v, meio))
 			printf ("ta ordenado lek\n");
 
-		else if (esta_invertido(v, ini, fim))
+		/*else if (esta_invertido(v, ini, fim))
 			printf ("ta ordenado invertido lek\n");
-			/* falta inverter */
+			falta inverter */
 
 		else 
 		{
