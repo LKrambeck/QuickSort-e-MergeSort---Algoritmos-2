@@ -272,6 +272,7 @@ int particiona_mediana5 (int v[], int ini, int fim, int pivo)
 /* calcula a mediana de 3 entre v[ini], v[meio] e v[fim] usando vetor e insertion */
 int mediana5_vetor (int v[], int ini, int fim)
 {
+	/* achar uma implementação mais eficiente */
 	int meio = ini + (fim-ini)/2;
 	int esq = ini + (meio-ini)/2;
 	int dir = meio + (fim-meio)/2;
@@ -442,6 +443,7 @@ void mergesort_melhorado (int v[], int ini, int fim)
 
 	if (ini < fim)
 	{
+		/* implementar intercalar o aux e o v */
 		mergesort_melhorado (v, ini, meio);
 		mergesort_melhorado (v, meio+1, fim);
 		if (!esta_ordenado (v, meio))
