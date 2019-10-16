@@ -1,0 +1,40 @@
+Algoritmo:      mergesort_basico (R) | Iterações:   100 | Tamanho:         10 | Tempo:        0.003706 milisegundos.
+Algoritmo:      mergesort_basico (R) | Iterações:   100 | Tamanho:        100 | Tempo:        0.029409 milisegundos.
+Algoritmo:      mergesort_basico (R) | Iterações:   100 | Tamanho:       1000 | Tempo:        0.189009 milisegundos.
+Algoritmo:      mergesort_basico (R) | Iterações:   100 | Tamanho:      10000 | Tempo:        2.083723 milisegundos.
+Algoritmo:      mergesort_basico (R) | Iterações:   100 | Tamanho:     100000 | Tempo:       24.521313 milisegundos.
+Algoritmo:      mergesort_basico (R) | Iterações:   100 | Tamanho:    1000000 | Tempo:      284.820752 milisegundos.
+
+Algoritmo:      quicksort_inicio (R) | Iterações:   100 | Tamanho:         10 | Tempo:        0.001877 milisegundos.
+Algoritmo:      quicksort_inicio (R) | Iterações:   100 | Tamanho:        100 | Tempo:        0.029961 milisegundos.
+Algoritmo:      quicksort_inicio (R) | Iterações:   100 | Tamanho:       1000 | Tempo:        0.159670 milisegundos.
+Algoritmo:      quicksort_inicio (R) | Iterações:   100 | Tamanho:      10000 | Tempo:        1.640867 milisegundos.
+Algoritmo:      quicksort_inicio (R) | Iterações:   100 | Tamanho:     100000 | Tempo:       20.408826 milisegundos.
+Algoritmo:      quicksort_inicio (R) | Iterações:   100 | Tamanho:    1000000 | Tempo:      242.722869 milisegundos.
+
+Algoritmo:      mergesort_basico (O) | Iterações:     100 | Tamanho:         10 | Tempo:        0.002681 milisegundos.
+Algoritmo:      mergesort_basico (O) | Iterações:     100 | Tamanho:        100 | Tempo:        0.024702 milisegundos.
+Algoritmo:      mergesort_basico (O) | Iterações:     100 | Tamanho:       1000 | Tempo:        0.160129 milisegundos.
+Algoritmo:      mergesort_basico (O) | Iterações:     100 | Tamanho:      10000 | Tempo:        1.456621 milisegundos.
+Algoritmo:      mergesort_basico (O) | Iterações:     100 | Tamanho:     100000 | Tempo:       16.756458 milisegundos.
+Algoritmo:      mergesort_basico (O) | Iterações:     100 | Tamanho:    1000000 | Tempo:      189.670820 milisegundos.
+
+Algoritmo:      quicksort_inicio (O) | Iterações:     100 | Tamanho:         10 | Tempo:        0.001162 milisegundos.
+Algoritmo:      quicksort_inicio (O) | Iterações:     100 | Tamanho:        100 | Tempo:        0.064214 milisegundos.
+Algoritmo:      quicksort_inicio (O) | Iterações:     100 | Tamanho:       1000 | Tempo:        1.651006 milisegundos.
+Algoritmo:      quicksort_inicio (O) | Iterações:     100 | Tamanho:      10000 | Tempo:      160.126680 milisegundos.
+
+Algoritmo:    quicksort_mediana3 (R) | Iterações:   100 | Tamanho:         10 | Tempo:        0.002549 milisegundos.
+Algoritmo:    quicksort_mediana3 (R) | Iterações:   100 | Tamanho:        100 | Tempo:        0.013870 milisegundos.
+Algoritmo:    quicksort_mediana3 (R) | Iterações:   100 | Tamanho:       1000 | Tempo:        0.176536 milisegundos.
+Algoritmo:    quicksort_mediana3 (R) | Iterações:   100 | Tamanho:      10000 | Tempo:        1.556360 milisegundos.
+Algoritmo:    quicksort_mediana3 (R) | Iterações:   100 | Tamanho:     100000 | Tempo:       18.152781 milisegundos.
+Algoritmo:    quicksort_mediana3 (R) | Iterações:   100 | Tamanho:    1000000 | Tempo:      209.309841 milisegundos.
+
+Algoritmo:  mergesort_melhorado1 (R) | Iterações:     100 | Tamanho:         10 | Tempo:        0.002588 milisegundos.
+Algoritmo:  mergesort_melhorado1 (R) | Iterações:     100 | Tamanho:        100 | Tempo:        0.016948 milisegundos.
+Algoritmo:  mergesort_melhorado1 (R) | Iterações:     100 | Tamanho:       1000 | Tempo:        0.168647 milisegundos.
+Algoritmo:  mergesort_melhorado1 (R) | Iterações:     100 | Tamanho:      10000 | Tempo:        1.963350 milisegundos.
+Algoritmo:  mergesort_melhorado1 (R) | Iterações:     100 | Tamanho:     100000 | Tempo:       23.164280 milisegundos.
+Algoritmo:  mergesort_melhorado1 (R) | Iterações:     100 | Tamanho:    1000000 | Tempo:      271.175571 milisegundos.
+
