@@ -4,8 +4,6 @@
 
 #include "lib_ordena.h"
 
-#define LIMITE 1000000
-
 double timestamp(void)
 {
   struct timeval tp;
@@ -17,11 +15,12 @@ int main () {
     int i, tam;
     double ini, fim, soma_tempo;
 
-	/* Mude aqui o numero de iterações e nome do algoritmo */
+	/* Mude aqui o numero de iterações, tamanho maximo e nome do algoritmo */
 	int MAX_IT = 100;
+	int TAM_MAX = 1000000;
 	char *algoritmo = "quicksort_mediana3 (R)";
 
-	for ( tam=10; tam <= LIMITE; tam*=10 ) 
+	for ( tam=10; tam <= TAM_MAX; tam*=10 ) 
 	{
 		int *v;
 		v = (int*) malloc (tam * sizeof(int)); 
@@ -42,7 +41,7 @@ int main () {
 
 			soma_tempo += (fim-ini);
 
-/*			imprime_vetor (v, tam);*/
+			/*imprime_vetor (v, tam);*/
 			embaralha_vetor (v,tam);
 		}
 		
@@ -51,5 +50,8 @@ int main () {
 		free (v);
 
 	}
+
+	printf ("\n");
+
     return 0;
 }

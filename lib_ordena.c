@@ -174,12 +174,10 @@ void quicksort_meio (int v[], int ini, int fim)
 }
 
 /* particiona com pivo da mediana de 3 */
-int particiona_mediana3 (int v[], int ini, int fim, int pivo_i)
+int particiona_mediana3 (int v[], int ini, int fim, int pivo)
 {
-	int pivo, i, j;
+	int i, j;
 
-	/* evita overflow */
-	pivo = v[pivo_i];
 	i = ini-1;
 	j = fim+1;
 
@@ -200,7 +198,7 @@ int particiona_mediana3 (int v[], int ini, int fim, int pivo_i)
 	}
 }
 
-/* calcula a mediana entre v[ini], v[meio] e v[fim] e retorna o seu indice */
+/* calcula a mediana entre v[ini], v[meio] e v[fim] */
 int mediana3 (int v[], int ini, int fim)
 {
 	int meio = ini + (fim-ini)/2;
@@ -208,26 +206,39 @@ int mediana3 (int v[], int ini, int fim)
 	if (v[ini] < v[meio])
 	{
 		if (v[ini] >= v[fim])
-			return ini;
+			return v[ini];
 		else if (v[meio] < v[fim])
-			return meio;
+			return v[meio];
 	}
 
 	else
 	{
 		if (v[ini] < v[fim])
-			return ini;
+			return v[ini];
 		else if (v[meio] >= v[fim])
-			return meio;
+			return v[meio];
 	}
-	return fim;
+	return v[fim];
+}
+
+/* calcula a mediana de 3 entre v[ini], v[meio] e v[fim] usando vetor e insertion */
+int mediana3_vetor (int v[], int ini, int fim)
+{
+	int meio = ini + (fim-ini)/2;
+
+	int m[3] = {v[ini], v[meio], v[fim]};
+
+	insertionsort (m, 0, 2);
+
+	return m[1];	
 }
 
 void quicksort_mediana3 (int v[], int ini, int fim)
 {
 	if (ini < fim)
 	{
-		int pivo_i = particiona_mediana3 (v, ini, fim, mediana3(v, ini, fim));
+		int pivo = mediana3 (v, ini, fim);
+		int pivo_i = particiona_mediana3 (v, ini, fim, pivo);
 		quicksort_mediana3 (v, ini, pivo_i);
 		quicksort_mediana3 (v, pivo_i+1, fim);
 	}

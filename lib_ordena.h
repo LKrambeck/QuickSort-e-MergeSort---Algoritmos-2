@@ -11,4 +11,3 @@ void quicksort_meio           (int v[], int ini, int fim);
 void quicksort_mediana3       (int v[], int ini, int fim);
 void mergesort_basico         (int v[], int ini, int fim);
 void mergesort_melhorado      (int v[], int ini, int fim);
-void teste (int v[], int ini, int fim);
