@@ -4,7 +4,7 @@
 
 #include "lib_ordena.h"
 
-#define LIMITE_INSERTION 50
+#define LIMITE_INSERTION 70
 
 void imprime_vetor (int v[], int tam) {
     int i;
@@ -237,7 +237,10 @@ int mediana3_vetor (int v[], int ini, int fim)
 
 void quicksort_mediana3 (int v[], int ini, int fim)
 {
-	if (ini < fim)
+	if (ini + LIMITE_INSERTION > fim)
+		insertionsort (v, ini, fim);
+
+	else
 	{
 		int pivo = mediana3 (v, ini, fim);
 		int pivo_i = particiona_mediana3 (v, ini, fim, pivo);

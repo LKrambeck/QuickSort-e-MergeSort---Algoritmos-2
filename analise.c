@@ -18,7 +18,7 @@ int main () {
 	/* Mude aqui o numero de iterações, tamanho maximo e nome do algoritmo */
 	int MAX_IT = 100;
 	int TAM_MAX = 1000000;
-	char *algoritmo = "mergesort_melhorado (R)";
+	char *algoritmo = "mergesort_melhorado_h (O)";
 
 	for ( tam=10; tam <= TAM_MAX; tam*=10 ) 
 	{
@@ -26,7 +26,7 @@ int main () {
 		v = (int*) malloc (tam * sizeof(int)); 
 
 		/* Mude aqui o tipo de entrada */
-		gera_vetor_randomico (v,tam);
+		gera_vetor_em_ordem (v,tam);
 
 		soma_tempo = 0;
 		for (i=0; i<MAX_IT; i++) 
@@ -38,7 +38,7 @@ int main () {
 
 			soma_tempo += (fim-ini);
 
-			embaralha_vetor (v,tam);
+			/*embaralha_vetor (v,tam);*/
 		}
 		
 		printf("Algoritmo: %25s | Iterações: %7d | Tamanho: %10d | Tempo: %15f milisegundos.\n", algoritmo, MAX_IT, tam, soma_tempo/MAX_IT);

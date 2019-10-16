@@ -38,3 +38,17 @@ Algoritmo:   mergesort_melhorado (R) | Iterações:     100 | Tamanho:      1000
 Algoritmo:   mergesort_melhorado (R) | Iterações:     100 | Tamanho:     100000 | Tempo:        8.090613 milisegundos.
 Algoritmo:   mergesort_melhorado (R) | Iterações:     100 | Tamanho:    1000000 | Tempo:      114.690315 milisegundos.
 
+Algoritmo: quicksort_mediana3_hib (R) | Iterações:     100 | Tamanho:         10 | Tempo:        0.000984 milisegundos.
+Algoritmo: quicksort_mediana3_hib (R) | Iterações:     100 | Tamanho:        100 | Tempo:        0.016091 milisegundos.
+Algoritmo: quicksort_mediana3_hib (R) | Iterações:     100 | Tamanho:       1000 | Tempo:        0.091113 milisegundos.
+Algoritmo: quicksort_mediana3_hib (R) | Iterações:     100 | Tamanho:      10000 | Tempo:        0.766570 milisegundos.
+Algoritmo: quicksort_mediana3_hib (R) | Iterações:     100 | Tamanho:     100000 | Tempo:       10.327100 milisegundos.
+Algoritmo: quicksort_mediana3_hib (R) | Iterações:     100 | Tamanho:    1000000 | Tempo:      131.479883 milisegundos.
+
+Algoritmo: mergesort_melhorado_h (R) | Iterações:     100 | Tamanho:         10 | Tempo:        0.001187 milisegundos.
+Algoritmo: mergesort_melhorado_h (R) | Iterações:     100 | Tamanho:        100 | Tempo:        0.011096 milisegundos.
+Algoritmo: mergesort_melhorado_h (R) | Iterações:     100 | Tamanho:       1000 | Tempo:        0.067683 milisegundos.
+Algoritmo: mergesort_melhorado_h (R) | Iterações:     100 | Tamanho:      10000 | Tempo:        0.616626 milisegundos.
+Algoritmo: mergesort_melhorado_h (R) | Iterações:     100 | Tamanho:     100000 | Tempo:        8.030952 milisegundos.
+Algoritmo: mergesort_melhorado_h (R) | Iterações:     100 | Tamanho:    1000000 | Tempo:      102.249565 milisegundos.
+
