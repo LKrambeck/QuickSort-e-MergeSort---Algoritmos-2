@@ -4,6 +4,8 @@
 
 #include "lib_ordena.h"
 
+#define LIMITE_INSERTION 50
+
 void imprime_vetor (int v[], int tam) {
     int i;
 
@@ -269,7 +271,7 @@ int particiona_mediana5 (int v[], int ini, int fim, int pivo)
 	}
 }
 
-/* calcula a mediana de 3 entre v[ini], v[meio] e v[fim] usando vetor e insertion */
+/* calcula a mediana de 5 usando vetor e insertion */
 int mediana5_vetor (int v[], int ini, int fim)
 {
 	/* achar uma implementação mais eficiente */
@@ -302,17 +304,6 @@ void copia_vetor (int v[], int aux[], int ini, int fim)
 	for ( i=0; i < tam; i++ )
 	{
 		aux[i] = v[ini];
-		ini++;
-	}
-}
-
-void copia_vetor2 (int v[], int aux[], int ini, int fim)
-{
-	int i, tam = fim-ini+1;
-
-	for ( i=0; i < tam; i++ )
-	{
-		v[ini] = aux[i];
 		ini++;
 	}
 }
@@ -378,17 +369,20 @@ void mergesort_basico (int v[], int ini, int fim)
 	}
 }
 
-/* intercala com melhorias */
-void intercala_melhorado (int v[], int ini, int meio, int fim) 
+void copia_vetor_melhorado (int v[], int aux[], int ini, int fim)
 {
-	/* implementar passar o vetor por parametro */
-	int tam_aux = fim-ini+1;
-	int aux[tam_aux];
+	for ( ini=ini; ini <= fim; ini++ )
+		v[ini] = aux[ini];
+}
 
-
+/* intercala com melhorias */
+void intercala_melhorado (int v[], int aux[], int ini, int meio, int fim) 
+{
+	/* indices do vetor v */
 	int i = ini;
 	int j = meio +1;
-	int k = 0;
+	/* indice do vetor aux */
+	int k = ini;
 
 	/* intercala entre as duas seções do vetor aux */
 	while ( (i <= meio) && (j <= fim) )
@@ -423,30 +417,43 @@ void intercala_melhorado (int v[], int ini, int meio, int fim)
 		k++;
 	}
 	
-	copia_vetor2 (v, aux, ini, fim);
+	copia_vetor_melhorado (v, aux, ini, fim);
 }
 
 /* testa se duas particoes do merge já estao ordenadas */
-int esta_ordenado (int v[], int meio)
+int esta_ordenado (int v[], int aux[], int meio)
 {
-	if ( v[meio] < v[meio+1] )
+	if ( v[meio] < aux[meio+1] )
 		return 1;
 
 	return 0;
 }
 
 /* mergesort com melhorias */
-void mergesort_melhorado (int v[], int ini, int fim) 
+void mergesort_melhorado_com_aux (int v[], int aux[], int ini, int fim) 
 {
 	/* evita overflow */
 	int meio = ini + (fim - ini)/2;
 
-	if (ini < fim)
+	if (ini + LIMITE_INSERTION > fim)
+		insertionsort (v, ini, fim);
+
+	else
 	{
-		/* implementar intercalar o aux e o v */
-		mergesort_melhorado (v, ini, meio);
-		mergesort_melhorado (v, meio+1, fim);
-		if (!esta_ordenado (v, meio))
-			intercala_melhorado (v, ini, meio, fim);
+		mergesort_melhorado_com_aux (v, aux, ini, meio);
+		mergesort_melhorado_com_aux (aux, v, meio+1, fim);
+		if (!esta_ordenado (v, aux, meio))
+			intercala_melhorado (v, aux, ini, meio, fim);
 	}
+}
+
+void mergesort_melhorado (int v[], int ini, int fim)
+{
+	int *aux;
+	aux = (int*) malloc ((fim+1)*sizeof(int));
+
+	copia_vetor (v, aux, ini, fim);
+	mergesort_melhorado_com_aux (v, aux, ini, fim);
+	
+	free (aux);
 }

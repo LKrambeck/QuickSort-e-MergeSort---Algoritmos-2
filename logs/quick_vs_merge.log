@@ -31,17 +31,10 @@ Algoritmo:    quicksort_mediana3 (R) | Iterações:   100 | Tamanho:      10000 
 Algoritmo:    quicksort_mediana3 (R) | Iterações:   100 | Tamanho:     100000 | Tempo:       18.152781 milisegundos.
 Algoritmo:    quicksort_mediana3 (R) | Iterações:   100 | Tamanho:    1000000 | Tempo:      209.309841 milisegundos.
 
-Algoritmo:  mergesort_melhorado1 (R) | Iterações:     100 | Tamanho:         10 | Tempo:        0.002588 milisegundos.
-Algoritmo:  mergesort_melhorado1 (R) | Iterações:     100 | Tamanho:        100 | Tempo:        0.016948 milisegundos.
-Algoritmo:  mergesort_melhorado1 (R) | Iterações:     100 | Tamanho:       1000 | Tempo:        0.168647 milisegundos.
-Algoritmo:  mergesort_melhorado1 (R) | Iterações:     100 | Tamanho:      10000 | Tempo:        1.963350 milisegundos.
-Algoritmo:  mergesort_melhorado1 (R) | Iterações:     100 | Tamanho:     100000 | Tempo:       23.164280 milisegundos.
-Algoritmo:  mergesort_melhorado1 (R) | Iterações:     100 | Tamanho:    1000000 | Tempo:      271.175571 milisegundos.
-
-Algoritmo:  mergesort_melhorado2 (R) | Iterações:     100 | Tamanho:         10 | Tempo:        0.002358 milisegundos.
-Algoritmo:  mergesort_melhorado2 (R) | Iterações:     100 | Tamanho:        100 | Tempo:        0.038579 milisegundos.
-Algoritmo:  mergesort_melhorado2 (R) | Iterações:     100 | Tamanho:       1000 | Tempo:        0.242908 milisegundos.
-Algoritmo:  mergesort_melhorado2 (R) | Iterações:     100 | Tamanho:      10000 | Tempo:        1.882322 milisegundos.
-Algoritmo:  mergesort_melhorado2 (R) | Iterações:     100 | Tamanho:     100000 | Tempo:       22.596338 milisegundos.
-Algoritmo:  mergesort_melhorado2 (R) | Iterações:     100 | Tamanho:    1000000 | Tempo:      267.566848 milisegundos.
+Algoritmo:   mergesort_melhorado (R) | Iterações:     100 | Tamanho:         10 | Tempo:        0.001213 milisegundos.
+Algoritmo:   mergesort_melhorado (R) | Iterações:     100 | Tamanho:        100 | Tempo:        0.024856 milisegundos.
+Algoritmo:   mergesort_melhorado (R) | Iterações:     100 | Tamanho:       1000 | Tempo:        0.066545 milisegundos.
+Algoritmo:   mergesort_melhorado (R) | Iterações:     100 | Tamanho:      10000 | Tempo:        0.615146 milisegundos.
+Algoritmo:   mergesort_melhorado (R) | Iterações:     100 | Tamanho:     100000 | Tempo:        8.090613 milisegundos.
+Algoritmo:   mergesort_melhorado (R) | Iterações:     100 | Tamanho:    1000000 | Tempo:      114.690315 milisegundos.
 

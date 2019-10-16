@@ -18,7 +18,7 @@ int main () {
 	/* Mude aqui o numero de iterações, tamanho maximo e nome do algoritmo */
 	int MAX_IT = 100;
 	int TAM_MAX = 1000000;
-	char *algoritmo = "mergesort_melhorado2 (R)";
+	char *algoritmo = "mergesort_melhorado (R)";
 
 	for ( tam=10; tam <= TAM_MAX; tam*=10 ) 
 	{
@@ -31,9 +31,6 @@ int main () {
 		soma_tempo = 0;
 		for (i=0; i<MAX_IT; i++) 
 		{
-			/*printf ("\n");
-			imprime_vetor (v, tam);*/
-
 			ini = timestamp();
 			/* Mude aqui o algoritmo usado */
 			mergesort_melhorado (v,0,tam-1); 
@@ -41,7 +38,6 @@ int main () {
 
 			soma_tempo += (fim-ini);
 
-			/*imprime_vetor (v, tam);*/
 			embaralha_vetor (v,tam);
 		}
 		
