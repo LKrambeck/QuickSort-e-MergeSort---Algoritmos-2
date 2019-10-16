@@ -12,7 +12,6 @@ void imprime_vetor (int v[], int tam) {
     printf("%d\n",v[tam-1]);
 }
 
-/* função interna da biblioteca */
 void troca (int v[], int i, int j) {
     int aux;
 
@@ -174,7 +173,66 @@ void quicksort_meio (int v[], int ini, int fim)
 	}
 }
 
-/* função interna da biblioteca */
+/* particiona com pivo da mediana de 3 */
+int particiona_mediana3 (int v[], int ini, int fim, int pivo_i)
+{
+	int pivo, i, j;
+
+	/* evita overflow */
+	pivo = v[pivo_i];
+	i = ini-1;
+	j = fim+1;
+
+	while (1)
+	{
+		do 
+			i++;
+		while ( v[i] < pivo );
+
+		do 
+			j--;
+		while ( v[j] > pivo );
+
+		if ( i >= j )
+			return j;
+
+		troca (v, i, j);	
+	}
+}
+
+/* calcula a mediana entre v[ini], v[meio] e v[fim] e retorna o seu indice */
+int mediana3 (int v[], int ini, int fim)
+{
+	int meio = ini + (fim-ini)/2;
+
+	if (v[ini] < v[meio])
+	{
+		if (v[ini] >= v[fim])
+			return ini;
+		else if (v[meio] < v[fim])
+			return meio;
+	}
+
+	else
+	{
+		if (v[ini] < v[fim])
+			return ini;
+		else if (v[meio] >= v[fim])
+			return meio;
+	}
+	return fim;
+}
+
+void quicksort_mediana3 (int v[], int ini, int fim)
+{
+	if (ini < fim)
+	{
+		int pivo_i = particiona_mediana3 (v, ini, fim, mediana3(v, ini, fim));
+		quicksort_mediana3 (v, ini, pivo_i);
+		quicksort_mediana3 (v, pivo_i+1, fim);
+	}
+}
+
 void copia_vetor (int v[], int aux[], int ini, int fim)
 {
 	int i, tam = fim-ini+1;
@@ -295,7 +353,6 @@ void intercala_melhorado (int v[], int ini, int meio, int fim)
 	}
 }
 
-/* função interna da biblioteca */
 /* testa se duas particoes do merge já estao ordenadas */
 int esta_ordenado (int v[], int meio)
 {
@@ -305,7 +362,6 @@ int esta_ordenado (int v[], int meio)
 	return 0;
 }
 
-/* função interna da biblioteca */
 /* testa se duas particoes do merge estão ordenadas invertidas */
 int esta_invertido (int v[], int ini, int fim)
 {

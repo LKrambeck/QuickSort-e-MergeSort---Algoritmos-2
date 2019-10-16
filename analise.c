@@ -19,7 +19,7 @@ int main () {
 
 	/* Mude aqui o numero de iterações e nome do algoritmo */
 	int MAX_IT = 100;
-	char *algoritmo = "mergesort_basico (R)";
+	char *algoritmo = "quicksort_mediana3 (R)";
 
 	for ( tam=10; tam <= LIMITE; tam*=10 ) 
 	{
@@ -32,16 +32,17 @@ int main () {
 		soma_tempo = 0;
 		for (i=0; i<MAX_IT; i++) 
 		{
-			/*imprime_vetor (v, tam);*/
+			/*printf ("\n");
+			imprime_vetor (v, tam);*/
 
 			ini = timestamp();
 			/* Mude aqui o algoritmo usado */
-			mergesort_basico (v,0,tam-1); 
+			quicksort_mediana3 (v,0,tam-1); 
 			fim = timestamp();
 
 			soma_tempo += (fim-ini);
 
-			/*imprime_vetor (v, tam);*/
+/*			imprime_vetor (v, tam);*/
 			embaralha_vetor (v,tam);
 		}
 		
