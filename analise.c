@@ -17,8 +17,8 @@ int main () {
 
 	/* Mude aqui o numero de iterações, tamanho maximo e nome do algoritmo */
 	int MAX_IT = 100;
-	int TAM_MAX = 100000;
-	char *algoritmo = "insertionsort (R)";
+	int TAM_MAX = 1000000;
+	char *algoritmo = "mergesort_melhorado2 (R)";
 
 	for ( tam=10; tam <= TAM_MAX; tam*=10 ) 
 	{
@@ -36,7 +36,7 @@ int main () {
 
 			ini = timestamp();
 			/* Mude aqui o algoritmo usado */
-			insertionsort (v,0,tam-1); 
+			mergesort_melhorado (v,0,tam-1); 
 			fim = timestamp();
 
 			soma_tempo += (fim-ini);
@@ -45,7 +45,7 @@ int main () {
 			embaralha_vetor (v,tam);
 		}
 		
-		printf("Algoritmo: %25s | Iterações: %5d | Tamanho: %10d | Tempo: %15f milisegundos.\n", algoritmo, MAX_IT, tam, soma_tempo/MAX_IT);
+		printf("Algoritmo: %25s | Iterações: %7d | Tamanho: %10d | Tempo: %15f milisegundos.\n", algoritmo, MAX_IT, tam, soma_tempo/MAX_IT);
 
 		free (v);
 

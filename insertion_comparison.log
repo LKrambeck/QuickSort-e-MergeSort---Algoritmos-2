@@ -1,0 +1,36 @@
+Algoritmo:         insertionsort (R) | Iterações: 1000000 | Tamanho:         10 | Tempo:        0.000253 milisegundos.
+Algoritmo:         insertionsort (R) | Iterações: 1000000 | Tamanho:         20 | Tempo:        0.000651 milisegundos.
+Algoritmo:         insertionsort (R) | Iterações: 1000000 | Tamanho:         30 | Tempo:        0.001202 milisegundos.
+Algoritmo:         insertionsort (R) | Iterações: 1000000 | Tamanho:         40 | Tempo:        0.001922 milisegundos.
+Algoritmo:         insertionsort (R) | Iterações: 1000000 | Tamanho:         50 | Tempo:        0.002805 milisegundos.
+
+Algoritmo:    quicksort_mediana3 (R) | Iterações: 1000000 | Tamanho:         10 | Tempo:        0.000580 milisegundos.
+Algoritmo:    quicksort_mediana3 (R) | Iterações: 1000000 | Tamanho:         20 | Tempo:        0.001432 milisegundos.
+Algoritmo:    quicksort_mediana3 (R) | Iterações: 1000000 | Tamanho:         30 | Tempo:        0.002359 milisegundos.
+Algoritmo:    quicksort_mediana3 (R) | Iterações: 1000000 | Tamanho:         40 | Tempo:        0.003291 milisegundos.
+Algoritmo:    quicksort_mediana3 (R) | Iterações: 1000000 | Tamanho:         50 | Tempo:        0.004255 milisegundos.
+
+Algoritmo:      mergesort_basico (R) | Iterações: 1000000 | Tamanho:         10 | Tempo:        0.000859 milisegundos.
+Algoritmo:      mergesort_basico (R) | Iterações: 1000000 | Tamanho:         20 | Tempo:        0.001973 milisegundos.
+Algoritmo:      mergesort_basico (R) | Iterações: 1000000 | Tamanho:         30 | Tempo:        0.003167 milisegundos.
+Algoritmo:      mergesort_basico (R) | Iterações: 1000000 | Tamanho:         40 | Tempo:        0.004464 milisegundos.
+Algoritmo:      mergesort_basico (R) | Iterações: 1000000 | Tamanho:         50 | Tempo:        0.005841 milisegundos.
+
+Algoritmo:      quicksort_inicio (R) | Iterações: 1000000 | Tamanho:         10 | Tempo:        0.000475 milisegundos.
+Algoritmo:      quicksort_inicio (R) | Iterações: 1000000 | Tamanho:         20 | Tempo:        0.001170 milisegundos.
+Algoritmo:      quicksort_inicio (R) | Iterações: 1000000 | Tamanho:         30 | Tempo:        0.002102 milisegundos.
+Algoritmo:      quicksort_inicio (R) | Iterações: 1000000 | Tamanho:         40 | Tempo:        0.003168 milisegundos.
+Algoritmo:      quicksort_inicio (R) | Iterações: 1000000 | Tamanho:         50 | Tempo:        0.003643 milisegundos.
+
+Algoritmo:        quicksort_meio (R) | Iterações: 1000000 | Tamanho:         10 | Tempo:        0.000509 milisegundos.
+Algoritmo:        quicksort_meio (R) | Iterações: 1000000 | Tamanho:         20 | Tempo:        0.001343 milisegundos.
+Algoritmo:        quicksort_meio (R) | Iterações: 1000000 | Tamanho:         30 | Tempo:        0.002344 milisegundos.
+Algoritmo:        quicksort_meio (R) | Iterações: 1000000 | Tamanho:         40 | Tempo:        0.003331 milisegundos.
+Algoritmo:        quicksort_meio (R) | Iterações: 1000000 | Tamanho:         50 | Tempo:        0.004097 milisegundos.
+
+Algoritmo:         quicksort_fim (R) | Iterações: 1000000 | Tamanho:         10 | Tempo:        0.000422 milisegundos.
+Algoritmo:         quicksort_fim (R) | Iterações: 1000000 | Tamanho:         20 | Tempo:        0.001105 milisegundos.
+Algoritmo:         quicksort_fim (R) | Iterações: 1000000 | Tamanho:         30 | Tempo:        0.001833 milisegundos.
+Algoritmo:         quicksort_fim (R) | Iterações: 1000000 | Tamanho:         40 | Tempo:        0.002651 milisegundos.
+Algoritmo:         quicksort_fim (R) | Iterações: 1000000 | Tamanho:         50 | Tempo:        0.003793 milisegundos.
+

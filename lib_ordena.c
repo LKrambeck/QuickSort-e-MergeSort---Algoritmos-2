@@ -305,6 +305,17 @@ void copia_vetor (int v[], int aux[], int ini, int fim)
 	}
 }
 
+void copia_vetor2 (int v[], int aux[], int ini, int fim)
+{
+	int i, tam = fim-ini+1;
+
+	for ( i=0; i < tam; i++ )
+	{
+		v[ini] = aux[i];
+		ini++;
+	}
+}
+
 /* intercala sem melhorias */
 void intercala_basico (int v[], int ini, int meio, int fim) 
 {
@@ -370,63 +381,54 @@ void mergesort_basico (int v[], int ini, int fim)
 void intercala_melhorado (int v[], int ini, int meio, int fim) 
 {
 	/* implementar passar o vetor por parametro */
-	int tam_esq = meio - ini + 1;
-	int tam_dir = fim - meio;
-	int esquerdo[tam_esq], direito[tam_dir];
+	int tam_aux = fim-ini+1;
+	int aux[tam_aux];
 
-	copia_vetor (v, esquerdo, ini, meio);
-	copia_vetor (v, direito, meio+1, fim);
 
-	int i = 0;
-	int j = 0;
+	int i = ini;
+	int j = meio +1;
+	int k = 0;
 
-	/* intercala entre os dois vetores auxiliares */
-	while ( (i < tam_esq) && (j < tam_dir) )
+	/* intercala entre as duas seções do vetor aux */
+	while ( (i <= meio) && (j <= fim) )
 	{
-		if ( esquerdo[i] < direito[j] )
+		if ( v[i] < v[j] )
 		{
-			v[ini] = esquerdo[i];
+			aux[k] = v[i];
 			i++;
 		}
 
 		else
 		{
-			v[ini] = direito[j];
+			aux[k] = v[j];
 			j++;
 		}
 	
-		ini++;
+		k++;
 	}		
 
 	/* copia o restante do vetor que ainda houver elementos */
-	while (i < tam_esq)
+	while (i <= meio)
 	{
-		v[ini] = esquerdo[i];
+		aux[k] = v[i];
 		i++;
-		ini++;
+		k++;
 	}
 
-	while (j < tam_dir)
+	while (j <= fim)
 	{
-		v[ini] = direito[j];
+		aux[k] = v[j];
 		j++;
-		ini++;
+		k++;
 	}
+	
+	copia_vetor2 (v, aux, ini, fim);
 }
 
 /* testa se duas particoes do merge já estao ordenadas */
 int esta_ordenado (int v[], int meio)
 {
 	if ( v[meio] < v[meio+1] )
-		return 1;
-
-	return 0;
-}
-
-/* testa se duas particoes do merge estão ordenadas invertidas */
-int esta_invertido (int v[], int ini, int fim)
-{
-	if ( v[ini] > v[fim] )
 		return 1;
 
 	return 0;
@@ -440,22 +442,9 @@ void mergesort_melhorado (int v[], int ini, int fim)
 
 	if (ini < fim)
 	{
-		if (esta_ordenado(v, meio))
-			printf ("ta ordenado lek\n");
-
-		/*else if (esta_invertido(v, ini, fim))
-			printf ("ta ordenado invertido lek\n");
-			falta inverter */
-
-		else 
-		{
-			int aux[fim-ini+1];
-
-			copia_vetor (v, aux, ini, fim);
-			
-			mergesort_basico (v, ini, meio);
-			mergesort_basico (aux, meio+1, fim);
-			intercala_basico (v, ini, meio, fim);
-		}
+		mergesort_melhorado (v, ini, meio);
+		mergesort_melhorado (v, meio+1, fim);
+		if (!esta_ordenado (v, meio))
+			intercala_melhorado (v, ini, meio, fim);
 	}
 }
