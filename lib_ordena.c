@@ -249,7 +249,7 @@ void quicksort_mediana3 (int v[], int ini, int fim)
 	}
 }
 
-/* particiona com pivo da mediana de 3 */
+/* particiona com pivo da mediana de 5 */
 int particiona_mediana5 (int v[], int ini, int fim, int pivo)
 {
 	int i, j;
@@ -277,7 +277,6 @@ int particiona_mediana5 (int v[], int ini, int fim, int pivo)
 /* calcula a mediana de 5 usando vetor e insertion */
 int mediana5_vetor (int v[], int ini, int fim)
 {
-	/* achar uma implementação mais eficiente */
 	int meio = ini + (fim-ini)/2;
 	int esq = ini + (meio-ini)/2;
 	int dir = meio + (fim-meio)/2;
